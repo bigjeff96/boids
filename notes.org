@@ -1,0 +1,11 @@
+* Resources
+- [[https://www.youtube.com/watch?v=4LWmRuB-uNU][smarter every day video on boids]]
+- [[http://www.kfish.org/boids/pseudocode.html#ref2][boids pseudocode]]
+- [[https://en.wikipedia.org/wiki/Boids][boids wiki]]
+- [[https://eater.net/boids][Ben Eater implementation of boids]]
+- [[file:reynolds1987.pdf][Original paper on boids]]
+
+* Rules that boids must follow
+- Avoid boids that are too close
+- Aline with neighbor boids 
+- Go towards the center of mass of the boids
