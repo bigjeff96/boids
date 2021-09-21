@@ -27,7 +27,7 @@ int main() {
         birds[i].position = vec2(x, y);
     }
 
-    // int current_steps = 0;
+    int current_steps = 0;
 #if 0
     while (current_steps < TOTAL_STEPS) {
         // apply the rules for bird-bird interaction
@@ -37,6 +37,7 @@ int main() {
         goto_center_mass(birds);
         velocity_alignment(birds);
 
+ 
         // apply rules for bird-obstacle interaction
         // TODO implement obstacle avoidance for the Boids
     }
