@@ -27,19 +27,34 @@ int main() {
         birds[i].position = vec2(x, y);
     }
 
-    // int current_steps = 0;
-    
-#if 0
+    int current_steps = 0;
+
     while (current_steps < TOTAL_STEPS) {
-        // apply the rules for bird-bird interaction
-        // TODO implement the boid rules
-        
-        
-        
- 
+
+        // converge to center of mass
+        vec2 center_of_mass = vec2();
+
+        for (int i = 0; i < TOTAL_BIRDS; i++) {
+            center_of_mass += birds[i].position;
+        }
+
+        center_of_mass = (float)(1 / TOTAL_BIRDS) * center_of_mass;
+
+        vec2 center_of_mass_relative = vec2();
+
+        for (int i = 0; i < TOTAL_BIRDS; i++) {
+            center_of_mass_relative =
+                (TOTAL_BIRDS / (TOTAL_BIRDS - 1)) * center_of_mass - (1 / (TOTAL_BIRDS - 1)) * birds[i].position;
+            birds[i].velocity += center_of_mass_relative;
+        }
+
+        // update position based off velocity
+        for (int i = 0; i<TOTAL_BIRDS; i++) {
+            birds[i].position+=birds[i].velocity;
+        }
+
         // apply rules for bird-obstacle interaction
         // TODO implement obstacle avoidance for the Boids
     }
-#endif
     free(birds);
 }
