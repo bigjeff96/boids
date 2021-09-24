@@ -1,6 +1,7 @@
 #!/bin/bash
 SOURCE="src/*"
 BIN="bin/a.out"
-g++ $SOURCE -o $BIN -Wall -Wextra -pedantic -ggdb 
+FLAGS="-Wall -Wextra -ggdb"
+g++ $SOURCE -o $BIN  $FLAGS 
 # echo "Output of executable: "
 # ./test

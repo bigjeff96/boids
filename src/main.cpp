@@ -75,6 +75,7 @@ int main() {
         current_steps++;
     }
     free(birds);
+    printf("done\n");
 }
 
 void write_data(boid birds[], int current_steps) {
@@ -86,6 +87,6 @@ void write_data(boid birds[], int current_steps) {
 
         birds_file << (float)birds[i].position.x << "\t" << (float)birds[i].position.y << "\n";
     }
-
+    birds_file.close();
     free(file_name);
 }
